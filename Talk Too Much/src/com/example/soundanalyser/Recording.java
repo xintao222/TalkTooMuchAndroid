@@ -5,6 +5,7 @@ public class Recording {
 	  String date = null;
 	  long talk_time = 0;
 	  long total_time = 0;
+	  int percent = 0;
 
 	  public String getDate(){
 		  return date;
@@ -29,4 +30,12 @@ public class Recording {
 	  public void setTotalTime(long total_time){
 		  this.total_time = total_time;
 	  }
-	} 
+	  
+	  public int getPercent() {
+		  return percent;
+	  }
+	  public void setPercent(int percent) {
+		  this.percent = percent;
+	  }
+}
+

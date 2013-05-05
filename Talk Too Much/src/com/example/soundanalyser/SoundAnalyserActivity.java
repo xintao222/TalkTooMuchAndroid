@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -49,6 +50,7 @@ public class SoundAnalyserActivity extends Activity {
 	
 	private MySQLiteHelper dbHelper;
 	private SimpleCursorAdapter dataAdapter;
+
 	
 	private MediaRecorder recorder;
 	private Timer timer;
@@ -179,8 +181,7 @@ public class SoundAnalyserActivity extends Activity {
 		//data
 		dbHelper = new MySQLiteHelper(this);
 		dbHelper.open();
-		dbHelper.insertARecording();
-	
+
 		if(isRecordingStarted)
 		{
 				progressMaxView.setText(Integer.toString(recordLength) + " min");
@@ -253,6 +254,7 @@ public class SoundAnalyserActivity extends Activity {
 	public void SetRecordTime(View v) {
 		Intent i = new Intent(SoundAnalyserActivity.this, Recording_Length.class);
         startActivity(i);
+		
 	}
 	
 	public void pauseResumeFunction(View v)
@@ -329,13 +331,32 @@ public class SoundAnalyserActivity extends Activity {
 	
 	//this is where history will be implemented!
 	private void stopRecording() throws IOException {
-		//write to history
+
+		//date
 		Date currentDate = new Date(System.currentTimeMillis());
 		String Date1 = currentDate.toString();
+		String year = Date1.substring(0,4);
+		String month = Date1.substring(5,7);
+		String day = Date1.substring(8,10);
+		
+		month = monthWord(month);
+		
+		Date1 = month+" "+day+", "+year;
+		
+		//Spoke time
 		long talk_time = talkMinutes*60 + talkSeconds;
+		
+		//Recorded time
 		long total_time = totMinutes*60 + totSeconds;
+		
+		//Percentage
+		double percent_temp = (double) talk_time/total_time;
+		percent_temp = percent_temp * 100;
+		int percent = (int) Math.round(percent_temp);
+		
+		
 		dbHelper.open();
-		dbHelper.createRecording(Date1, talk_time, total_time);
+		dbHelper.createRecording(Date1, talk_time, total_time, percent);
 		dbHelper.close();
 		
 		handler.post(new Runnable() {
@@ -361,10 +382,63 @@ public class SoundAnalyserActivity extends Activity {
 		}
 	}
 	
+	private String monthWord(String month) {
+        if(month.equals("01"))
+        	{
+        		return "January";
+        	}    
+        if(month.equals("02"))
+    		{
+        		return "February";
+    		}
+        if(month.equals("03"))
+			{
+        		return "March";
+			}
+        if(month.equals("04"))
+			{
+        		return "April";
+			}
+        if(month.equals("05"))
+			{
+        		return "May";
+			}
+        if(month.equals("06"))
+			{
+        		return "June";
+			}
+        if(month.equals("07"))
+			{
+        		return "July";
+			}
+        if(month.equals("08"))
+			{
+        		return "August";
+			}
+        if(month.equals("09"))
+			{
+        		return "September";
+			}
+        if(month.equals("10"))
+			{
+        		return "October";
+			}
+        if(month.equals("11"))
+			{
+        		return "November";
+			}
+        if(month.equals("12"))
+			{
+        		return "December";
+			}
+        return "Invalid Month";
+	}
 	//go to history page if requested by user
 	public void HistoryExecute(View v){
+
 		Intent i = new Intent(SoundAnalyserActivity.this, History.class);
         startActivity(i);
+		
 	}
 
 	private class RecorderTask extends TimerTask {

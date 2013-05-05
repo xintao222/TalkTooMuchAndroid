@@ -33,27 +33,45 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/name"
-        android:text="TextView" />
-    
-    <TextView
-        android:id="@+id/recorded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
-        android:text="TextView" />
-    
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView3"
+        android:text="Percent "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
      <TextView
-        android:id="@+id/spoke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/spoke"
-        android:text="TextView" />
+         android:id="@+id/date"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/textView2"
+         android:layout_toRightOf="@+id/textView1"
+         android:text="TextView"
+         />
+
+     <TextView
+         android:id="@+id/recorded"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/textView3"
+         android:layout_toRightOf="@+id/textView2"
+         android:text="TextView" />
+
+     <TextView
+         android:id="@+id/spoke"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/textView3"
+         android:layout_toRightOf="@+id/textView3"
+         android:text="TextView" />
+     
+     <TextView
+         android:id="@+id/percent"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/textView4"
+         android:layout_toRightOf="@+id/textView4"
+         android:text="TextView" />
+
 </RelativeLayout>

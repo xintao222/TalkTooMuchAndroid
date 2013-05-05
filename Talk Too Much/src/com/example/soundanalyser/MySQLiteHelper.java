@@ -15,6 +15,7 @@ public class MySQLiteHelper {
   public static final String KEY_DATE = "date";
   public static final String KEY_TALKTIME = "talk_time";
   public static final String KEY_TOTALTIME = "total_time";
+  public static final String KEY_PERCENT = "percent";
   
   private static final String TAG = "RecordingsDbAdapter";
   private DatabaseHelper mDbHelper;
@@ -33,6 +34,7 @@ public class MySQLiteHelper {
       KEY_DATE  + "," + 
 	  KEY_TALKTIME + "," + 
       KEY_TOTALTIME + ","+
+	  KEY_PERCENT + ","+
 	  " UNIQUE (" + KEY_ROWID +"));";
 
   private static class DatabaseHelper extends SQLiteOpenHelper {
@@ -73,12 +75,13 @@ public class MySQLiteHelper {
 	  }
   }
   
-  public long createRecording (String date, long talk_time, long total_time)
+  public long createRecording (String date, long talk_time, long total_time, int percent)
   {
 	  ContentValues initialValues = new ContentValues();
 	  initialValues.put(KEY_DATE, date);
 	  initialValues.put(KEY_TALKTIME, talk_time);
 	  initialValues.put(KEY_TOTALTIME, total_time);
+	  initialValues.put(KEY_PERCENT, percent);
 	  
 	  return mDb.insert(SQLITE_TABLE, null, initialValues);
   }
@@ -94,11 +97,11 @@ public class MySQLiteHelper {
 	  Log.w(TAG, inputText);
 	  Cursor mCursor = null;
 	  if(inputText == null || inputText.length() ==0) {
-		  mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME}, null,null,null,null,null);
+		  mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, null,null,null,null,null);
 		  
 	  }
 	  else{
-		  mCursor = mDb.query(true, SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME}, KEY_DATE + " like '%" + inputText + "%'", null, null, null, null, null);
+		  mCursor = mDb.query(true, SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, KEY_DATE + " like '%" + inputText + "%'", null, null, null, null, null);
 		  
 	  }
 	  if(mCursor != null) {
@@ -109,18 +112,12 @@ public class MySQLiteHelper {
   
   public Cursor fetchAllRecordings() {
 	  
-	  Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME}, null, null, null, null, null);
+	  Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, null, null, null, null, null);
 	  
 	  if(mCursor != null) {
 		  mCursor.moveToFirst();
 	  }
 	  return mCursor;
   }
-	  
-  public void insertARecording() {
-	  
-	  createRecording("1991-04-18", 100, 110);
-	  
-  }
-  
+
 } 
