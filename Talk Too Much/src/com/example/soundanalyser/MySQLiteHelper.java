@@ -14,8 +14,11 @@ public class MySQLiteHelper {
   public static final String KEY_ROWID = "_id";
   public static final String KEY_DATE = "date";
   public static final String KEY_TALKTIME = "talk_time";
+  public static final String KEY_SPOKE = "spoke_string";
   public static final String KEY_TOTALTIME = "total_time";
+  public static final String KEY_RECORDED = "recorded_string";
   public static final String KEY_PERCENT = "percent";
+  
   
   private static final String TAG = "RecordingsDbAdapter";
   private DatabaseHelper mDbHelper;
@@ -32,8 +35,10 @@ public class MySQLiteHelper {
       + SQLITE_TABLE + " (" + 
 	  KEY_ROWID + " integer PRIMARY KEY autoincrement," + 
       KEY_DATE  + "," + 
-	  KEY_TALKTIME + "," + 
+	  KEY_TALKTIME + "," +
+      KEY_SPOKE + "," +
       KEY_TOTALTIME + ","+
+      KEY_RECORDED + ","+
 	  KEY_PERCENT + ","+
 	  " UNIQUE (" + KEY_ROWID +"));";
 
@@ -75,12 +80,14 @@ public class MySQLiteHelper {
 	  }
   }
   
-  public long createRecording (String date, long talk_time, long total_time, int percent)
+  public long createRecording (String date, long talk_time, long total_time, int percent, String spoke_string, String recorded_string)
   {
 	  ContentValues initialValues = new ContentValues();
 	  initialValues.put(KEY_DATE, date);
 	  initialValues.put(KEY_TALKTIME, talk_time);
+	  initialValues.put(KEY_SPOKE, spoke_string);
 	  initialValues.put(KEY_TOTALTIME, total_time);
+	  initialValues.put(KEY_RECORDED, recorded_string);
 	  initialValues.put(KEY_PERCENT, percent);
 	  
 	  return mDb.insert(SQLITE_TABLE, null, initialValues);
@@ -97,11 +104,11 @@ public class MySQLiteHelper {
 	  Log.w(TAG, inputText);
 	  Cursor mCursor = null;
 	  if(inputText == null || inputText.length() ==0) {
-		  mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, null,null,null,null,null);
+		  mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_SPOKE, KEY_TOTALTIME, KEY_RECORDED, KEY_PERCENT}, null,null,null,null,null);
 		  
 	  }
 	  else{
-		  mCursor = mDb.query(true, SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, KEY_DATE + " like '%" + inputText + "%'", null, null, null, null, null);
+		  mCursor = mDb.query(true, SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_SPOKE, KEY_TOTALTIME, KEY_RECORDED, KEY_PERCENT}, KEY_DATE + " like '%" + inputText + "%'", null, null, null, null, null);
 		  
 	  }
 	  if(mCursor != null) {
@@ -112,7 +119,7 @@ public class MySQLiteHelper {
   
   public Cursor fetchAllRecordings() {
 	  
-	  Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_TOTALTIME, KEY_PERCENT}, null, null, null, null, null);
+	  Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID, KEY_DATE, KEY_TALKTIME, KEY_SPOKE, KEY_TOTALTIME, KEY_RECORDED, KEY_PERCENT}, null, null, null, null, null);
 	  
 	  if(mCursor != null) {
 		  mCursor.moveToFirst();

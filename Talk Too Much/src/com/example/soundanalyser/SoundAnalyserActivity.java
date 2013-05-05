@@ -354,9 +354,16 @@ public class SoundAnalyserActivity extends Activity {
 		percent_temp = percent_temp * 100;
 		int percent = (int) Math.round(percent_temp);
 		
+		//for nice history output
+		String spoke_string = talkMinutes + " min, "
+				+ talkSeconds + " sec";
+		
+		String recorded_string = totMinutes + " min, "
+				+ totSeconds + " sec";
+		
 		
 		dbHelper.open();
-		dbHelper.createRecording(Date1, talk_time, total_time, percent);
+		dbHelper.createRecording(Date1, talk_time, total_time, percent, spoke_string, recorded_string);
 		dbHelper.close();
 		
 		handler.post(new Runnable() {

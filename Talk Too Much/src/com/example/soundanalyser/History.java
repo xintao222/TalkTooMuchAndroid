@@ -55,8 +55,8 @@ public class History extends Activity {
 		
 		String [] columns = new String[] {
 				MySQLiteHelper.KEY_DATE,
-				MySQLiteHelper.KEY_TALKTIME,
-				MySQLiteHelper.KEY_TOTALTIME,
+				MySQLiteHelper.KEY_SPOKE,
+				MySQLiteHelper.KEY_RECORDED,
 				MySQLiteHelper.KEY_PERCENT
 		};
 		
