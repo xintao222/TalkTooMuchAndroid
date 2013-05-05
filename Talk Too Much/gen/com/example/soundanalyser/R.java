@@ -66,29 +66,27 @@ containing a value of this type.
         public static final int ttmlogo=0x7f020008;
     }
     public static final class id {
-
-        public static final int TalkPercenttextView=0x7f0a0015;
-        public static final int TalkTimetextView=0x7f0a0014;
-        public static final int TotalTimetextView=0x7f0a0016;
-        public static final int action_settings=0x7f0a002f;
+        public static final int TalkPercenttextView=0x7f0a0016;
+        public static final int TalkTimetextView=0x7f0a0015;
+        public static final int TotalTimetextView=0x7f0a0017;
+        public static final int action_settings=0x7f0a0033;
         public static final int clearButton=0x7f0a0003;
-        public static final int current_value=0x7f0a0027;
-        public static final int dataLayout=0x7f0a0013;
-        public static final int date=0x7f0a002c;
-        public static final int dateTalkRecordLayout=0x7f0a002b;
-        public static final int endButton=0x7f0a0012;
+        public static final int current_value=0x7f0a0028;
+        public static final int dataLayout=0x7f0a0014;
+        public static final int date=0x7f0a002f;
+        public static final int dateTalkRecordLayout=0x7f0a002c;
+        public static final int endButton=0x7f0a0013;
         public static final int historyButton=0x7f0a0002;
         public static final int historyLayout=0x7f0a0001;
         public static final int historyTextLayout=0x7f0a0004;
         public static final int list=0x7f0a000e;
-
-        public static final int maxProgressBar=0x7f0a0026;
-        public static final int max_value=0x7f0a002a;
-        public static final int menu_settings=0x7f0a002e;
-        public static final int min_value=0x7f0a0029;
-        public static final int pauseButton=0x7f0a0011;
+        public static final int maxProgressBar=0x7f0a0027;
+        public static final int max_value=0x7f0a002b;
+        public static final int menu_settings=0x7f0a0032;
+        public static final int min_value=0x7f0a002a;
+        public static final int pauseButton=0x7f0a0012;
         public static final int percent=0x7f0a000d;
-        public static final int percentageTextLayout=0x7f0a002d;
+        public static final int percentageTextLayout=0x7f0a0030;
         public static final int precentTextLayout=0x7f0a000b;
         public static final int progressBar1=0x7f0a0025;
         public static final int progressBarG=0x7f0a001c;
