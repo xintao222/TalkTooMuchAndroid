@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.view.Menu;
@@ -85,24 +87,42 @@ public class History extends Activity {
 	
 	public void historyClear(View v)
 	{
-		
 		dbHelper = new MySQLiteHelper(this);
-		dbHelper.open();
-		Cursor cursor = dbHelper.fetchAllRecordings();
 		
-		if(cursor.getCount()>0)
-		{
-		dbHelper.deleteAllRecordings();
-		historyList.setVisibility(4);
-		historyList.setAdapter(dataAdapter);
-		
-		//reset summary
-		percentTotal.setText("0%");
-		recordedTotal.setText("0 min, 0 sec");
-		spokeTotal.setText("0 min, 0 sec");
-		}
-		
-		dbHelper.close();
+		new AlertDialog.Builder(this)
+        .setIcon(android.R.drawable.ic_dialog_alert)
+        .setTitle("Clear History")
+        .setMessage("Are you sure you want to delete all previous recordings?")
+        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+    {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+        	
+        	Button clear = (Button) findViewById(R.id.clearButton);
+    		
+    		dbHelper.open();
+    		Cursor cursor = dbHelper.fetchAllRecordings();
+    		
+    		if(cursor.getCount()>0)
+    		{
+    		dbHelper.deleteAllRecordings();
+    		historyList.setVisibility(4);
+    		historyList.setAdapter(dataAdapter);
+    		
+    		//reset summary
+    		percentTotal.setText("0%");
+    		recordedTotal.setText("0 min, 0 sec");
+    		spokeTotal.setText("0 min, 0 sec");
+    		}
+    		
+    		dbHelper.close(); 
+    		
+    		clear.setVisibility(4); //make clear button invisible
+        }
+
+    })
+    .setNegativeButton("No", null)
+    .show();
 		
 	}
 	
