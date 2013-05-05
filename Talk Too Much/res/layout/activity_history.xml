@@ -1,12 +1,32 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context=".Recording_Length" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Recording_Length"
+    android:background="#BFC0C1" >
 
+	<RelativeLayout
+		android:id="@+id/historyLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="4dp"
+		android:background="#6E6E6E" >
+		
+		<Button
+	        android:id="@+id/clearButton"
+			android:layout_width="96dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:onClick="historyClear"
+	        android:text="Clear"
+			android:gravity="center"
+	        android:textSize="16dp" />
+
+	</RelativeLayout>
+    
     <TextView
         android:id="@+id/historyButton"
         android:layout_width="wrap_content"
@@ -17,82 +37,85 @@
         android:text="History"
         android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/clearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="4dp"
-        android:minWidth="80dp"
-        android:onClick="historyClear"
-        android:text="Clear" />
 
-    <ListView
+    
+    <RelativeLayout
+			android:id="@+id/timeElapsedLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#E6E6E6"
+            android:padding="8dp">
+		<TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/textView3"
+	        android:layout_below="@+id/clearButton"
+	        android:text="Summary Statistics" />
+	
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/list"
+	        android:layout_below="@+id/textView2"
+	        android:text="Spoke" />
+	
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/textView3"
+	        android:layout_below="@+id/textView1"
+	        android:layout_marginTop="14dp"
+	        android:text="Recorded" />
+	
+	    <TextView
+	        android:id="@+id/textView4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/textView3"
+	        android:text="Percent" />
+	
+	    <TextView
+	        android:id="@+id/percent"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/textView4"
+	        android:text="TextView" />
+	
+	    <TextView
+	        android:id="@+id/recorded"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/spoke"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/textView2"
+	        android:text="TextView" />
+	
+	    <TextView
+	        android:id="@+id/spoke"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/percent"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/textView3"
+	        android:text="TextView" />
+
+    </RelativeLayout>
+
+	<ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" >
     </ListView>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/clearButton"
-        android:text="Summary Statistics" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/list"
-        android:layout_below="@+id/textView2"
-        android:text="Spoke" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="14dp"
-        android:text="Recorded" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView3"
-        android:text="Percent" />
-
-    <TextView
-        android:id="@+id/percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/spoke"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/recorded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/spoke"
-        android:layout_alignLeft="@+id/historyButton"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/spoke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/percent"
-        android:layout_alignLeft="@+id/recorded"
-        android:text="TextView" />
-
-</RelativeLayout>
+    
+</TableLayout>

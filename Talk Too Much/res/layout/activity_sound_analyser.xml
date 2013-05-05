@@ -16,16 +16,11 @@
         <RelativeLayout
             android:id="@+id/historyLayout"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+			android:background="#6E6E6E" >
 
-            <ImageView
-	            android:id="@+id/ttmlogoTopIcon"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_alignParentLeft="true"
-	            android:layout_alignParentTop="true"
-	            android:src="@drawable/ttmlogo" />
-            
             <Button
                 android:id="@+id/historyButton"   
                 android:layout_width="96dp"
@@ -51,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
                 android:onClick="SetRecordTime"
                 android:gravity="center"
@@ -109,8 +104,8 @@
                 android:textStyle="bold"
                 android:textColor="#303030"
                 android:text="Speaking time: 0 minutes 0 seconds"
-                android:textSize="18sp"/>
-                <!--  android:visibility="invisible"/>  -->
+                android:textSize="18sp"
+                android:visibility="invisible"/>
                 
             <TextView
                 android:id="@+id/TotalTimetextView"
@@ -122,9 +117,8 @@
                 android:textColor="#303030"
                 android:text="Total time: 0 minutes 0 seconds"
 				android:textStyle="bold"
-                android:textSize="18sp"/>
-            
-                <!-- android:visibility="invisible"/>  -->
+                android:textSize="18sp"
+            	android:visibility="invisible"/>
                 
             <TextView
                 android:id="@+id/TalkPercenttextView"
@@ -136,8 +130,8 @@
                 android:textColor="#303030"
                 android:text="Talk time percentage: 0%"
 				android:textStyle="bold"
-                android:textSize="18sp"/>
-                <!-- android:visibility="invisible" />  -->
+                android:textSize="18sp"
+                android:visibility="invisible" />
 
         </RelativeLayout>
     </TableLayout>
@@ -147,7 +141,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:gravity="bottom" >
 
         <RelativeLayout
@@ -173,20 +167,22 @@
 
             <ImageView
                 android:id="@+id/voiceLevelSoundOff"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="18dp"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/thresholdSBTitle"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="14dp"
                 android:src="@drawable/soundoff" />
 
             <ImageView
                 android:id="@+id/voiceLevelSoundOn"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/thresholdSBTitle"
-                android:layout_marginTop="7dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="6dp"
                 android:src="@drawable/soundon" />
 
             <ProgressBar
@@ -196,8 +192,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/thresholdSBTitle"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:layout_marginTop="8dp" />
 
             <ProgressBar
@@ -207,8 +203,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/progressBarG"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -234,30 +230,32 @@
 
             <ImageView
                 android:id="@+id/voiceThreshSoundOff"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="18dp"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/thresholdBarTitle"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/soundoff" />
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="14dp"
+                android:src="@drawable/soundoff" />         
 
             <ImageView
                 android:id="@+id/voiceThreshSoundOn"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/thresholdBarTitle"
-                android:layout_marginTop="7dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
                 android:src="@drawable/soundon" />
 
             <SeekBar
                 android:id="@+id/thresholdSeekBar"
-                android:layout_width="200dp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/thresholdBarTitle"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -286,19 +284,33 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/progressBarTitle"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="8dp" />
-
+            
+            <TextView
+                android:id="@+id/zeroProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/progressBar1"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:text="0 min"
+                android:textColor="#828282"
+                android:textSize="12sp" />
+            
             <TextView
                 android:id="@+id/maxProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/progressBar1"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
                 android:text="10 min"
-                android:textSize="13sp"
-                />
+                android:textColor="#828282"
+                android:textSize="12sp" />
         </RelativeLayout>
     </TableLayout>
  

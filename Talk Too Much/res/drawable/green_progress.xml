@@ -35,7 +35,7 @@
             <shape>  
                 <corners  
                     android:radius="5dip" />  
-                <gradient  
+                <gradient 
                         android:startColor="@color/greenStart"  
                         android:centerColor="@color/greenMid"  
                         android:centerY="0.75"  
