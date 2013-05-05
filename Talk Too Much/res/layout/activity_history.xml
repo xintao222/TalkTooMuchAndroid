@@ -4,7 +4,7 @@
     tools:context=".Recording_Length"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#BFC0C1" >
+    android:background="#FFFFFF" >
 
     <TableLayout
         android:id="@+id/topAnchorLayout"
@@ -48,6 +48,7 @@
             android:id="@+id/historyTextLayout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#BFC0C1"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -78,8 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/textView2"
                     android:layout_toLeftOf="@+id/textView2"
-                    android:textColor="#000"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="#000" />
                 
                 <TextView
                     android:id="@+id/textView3"
@@ -133,9 +134,10 @@
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="150dp"
         android:background="#FFFFFF">
     </ListView>
 
