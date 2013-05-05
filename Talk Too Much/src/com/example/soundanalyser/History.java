@@ -85,8 +85,13 @@ public class History extends Activity {
 	
 	public void historyClear(View v)
 	{
+		
 		dbHelper = new MySQLiteHelper(this);
 		dbHelper.open();
+		Cursor cursor = dbHelper.fetchAllRecordings();
+		
+		if(cursor.getCount()>0)
+		{
 		dbHelper.deleteAllRecordings();
 		historyList.setVisibility(4);
 		historyList.setAdapter(dataAdapter);
@@ -95,6 +100,8 @@ public class History extends Activity {
 		percentTotal.setText("0%");
 		recordedTotal.setText("0 min, 0 sec");
 		spokeTotal.setText("0 min, 0 sec");
+		}
+		
 		dbHelper.close();
 		
 	}

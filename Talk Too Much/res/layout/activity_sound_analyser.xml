@@ -1,245 +1,305 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#BFC0C1" >
 
-    <!--
-	<SeekBar
-        android:id="@+id/seekBar1"
+
+
+    <TableLayout
+        android:id="@+id/topAnchorLayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginBottom="120dp" />
-    -->
+        android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/TalkTimetextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/startButton"
-        android:layout_marginTop="12dp"
-        android:text="Speaking time: 0 minutes 0 seconds"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="invisible"
-        />
+        <RelativeLayout
+            android:id="@+id/historyLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/TotalTimetextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/TalkTimetextView"
-        android:text="Total time: 0 minutes 0 seconds"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="invisible"
-        />
+            <ImageView
+	            android:id="@+id/ttmlogoTopIcon"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/ttmlogo" />
+            
+            <Button
+                android:id="@+id/historyButton"   
+                android:layout_width="96dp"
+                android:layout_height="wrap_content" 
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:onClick="HistoryExecute"
+                android:text="History"
+                android:gravity="center"
+                android:textSize="16dp"/>
 
-    <ProgressBar
-        android:id="@+id/progressBarG"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/thresholdBarTitle"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/thresholdBarTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/TalkPercenttextView"
-        android:layout_marginTop="40dp"
-        android:paddingLeft="10dp"
-        android:layout_marginBottom="8dp"
-        android:text="Voice Level"
-        
-        android:textSize="13sp" />
 
-    <TextView
-        android:id="@+id/thresholdSBTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/thresholdBarTitle"
-        android:layout_marginTop="60dp"
-        android:paddingLeft="10dp"
-        android:text="Voice Threshold"
-        android:textSize="13sp" />
-    
-     <TextView
-         android:id="@+id/minProgressBar"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentBottom="true"
-         android:layout_alignParentLeft="true"
-		 android:layout_below="@+id/progressBar1"
-         android:paddingLeft="10dp"
-         android:text="0"
-         android:textSize="13sp" />
-     
-     <TextView
-        android:id="@+id/maxProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/progressBar1"
-        android:text="10 min"
-        android:textSize="13sp"
-        />
+        <RelativeLayout
+            android:id="@+id/startStopPauceLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <SeekBar
-        android:id="@+id/thresholdSeekBar"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-		android:layout_centerHorizontal="true"
-        android:layout_below="@+id/thresholdSBTitle"
-        android:layout_marginTop="4dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:onClick="SetRecordTime"
+                android:gravity="center"
+                android:text="Start"
+                android:textSize="16sp"/>
+            
+            <Button
+                android:id="@+id/pauseButton"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/startButton"
+                android:layout_alignLeft="@id/startButton"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:onClick="pauseResumeFunction"
+                android:text="Pause" 
+                android:gravity="center"
+                android:textSize="16sp"
+                android:visibility="invisible"/>
 
-    <TextView
-        android:id="@+id/progressBarTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
- 		android:layout_below="@+id/thresholdSBTitle"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="60dp"
-        android:text="Recording Time"
-        android:textSize="13sp" />
+            <Button
+                android:id="@+id/endButton"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/startButton"
+                android:layout_alignRight="@id/startButton"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:onClick="StopRecording"
+                android:text="End"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:visibility="invisible"/>
+                        
+        </RelativeLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleHorizontal"
+
+        <RelativeLayout
+            android:id="@+id/dataLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/TalkTimetextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/TalkPercenttextView"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#303030"
+                android:text="Speaking time: 0 minutes 0 seconds"
+                android:textSize="18sp"/>
+                <!--  android:visibility="invisible"/>  -->
+                
+            <TextView
+                android:id="@+id/TotalTimetextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/TalkTimetextView"
+                android:layout_marginTop="8dp"
+                android:textColor="#303030"
+                android:text="Total time: 0 minutes 0 seconds"
+				android:textStyle="bold"
+                android:textSize="18sp"/>
+            
+                <!-- android:visibility="invisible"/>  -->
+                
+            <TextView
+                android:id="@+id/TalkPercenttextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="16dp"
+                android:textColor="#303030"
+                android:text="Talk time percentage: 0%"
+				android:textStyle="bold"
+                android:textSize="18sp"/>
+                <!-- android:visibility="invisible" />  -->
+
+        </RelativeLayout>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/topAnchorLayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/progressBarTitle"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom" >
 
-    
-    <Button
-        android:id="@+id/historyButton"   
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-		android:minWidth="96dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="4dp"
-        android:onClick="HistoryExecute"
-        android:text="History" />
+        <RelativeLayout
+            android:id="@+id/voiceLevelLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#E6E6E6"
+            android:padding="8dp" >
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/historyButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:minWidth="200dp"
-        android:onClick="SetRecordTime"
-        android:text="Start" 
-       />
+            <TextView
+                android:id="@+id/thresholdSBTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Voice Level"
+                android:textColor="#828282"
+                android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/pauseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-		android:layout_below="@id/historyButton"
-        android:layout_marginTop="48dp"
-		android:layout_alignLeft="@+id/startButton"
-        android:minWidth="96dp"
-        android:text="Pause" 
-        android:onClick="pauseResumeFunction"
-        android:visibility="invisible"/>
-    
-	<Button
-        android:id="@+id/endButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TalkTimetextView"
-        android:layout_toRightOf="@id/pauseButton"
-        android:minWidth="96dp"
-        android:onClick="StopRecording"
-        android:visibility="invisible"
-        android:text="End" />
+            <ImageView
+                android:id="@+id/voiceLevelSoundOff"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/thresholdSBTitle"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/soundoff" />
 
-	<ProgressBar
-	    android:id="@+id/progressBarR"
-	    style="?android:attr/progressBarStyleHorizontal"
-	    android:layout_width="250dp"
-	    android:layout_height="wrap_content"
-	    android:layout_alignTop="@+id/progressBarG"
-	    android:layout_centerHorizontal="true"
-	    android:paddingLeft="10dp"
-	    android:paddingRight="10dp" />
+            <ImageView
+                android:id="@+id/voiceLevelSoundOn"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/thresholdSBTitle"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/soundon" />
 
-	<TextView
-	    android:id="@+id/TalkPercenttextView"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/TotalTimetextView"
-	    android:paddingLeft="10dp"
-	    android:paddingRight="10dp"
-	    android:text="Talk time percentage: 0%"
-	    android:textAppearance="?android:attr/textAppearanceMedium"
-	    android:visibility="invisible" />
+            <ProgressBar
+                android:id="@+id/progressBarG"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thresholdSBTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="48dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginTop="8dp" />
 
-	<ImageView
-	    android:id="@+id/voiceLevelSoundOff"
-	    android:layout_width="wrap_content"
-	    android:layout_height="20dp"
-	    android:layout_below="@+id/thresholdBarTitle"
-	    android:layout_toLeftOf="@+id/progressBarG"
-	    android:src="@drawable/soundoff" />
+            <ProgressBar
+                android:id="@+id/progressBarR"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/progressBarG"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="48dp"
+                android:layout_marginRight="48dp" />
+        </RelativeLayout>
 
-	<ImageView
-	    android:id="@+id/voiceLevelSoundOn"
-	    android:layout_width="wrap_content"
-	    android:layout_height="20dp"
-	    android:layout_alignRight="@+id/historyButton"
-	    android:layout_below="@+id/thresholdBarTitle"
-	    android:src="@drawable/soundon" />
-	
-	<ImageView
-	    android:id="@+id/voiceThreshSoundOff"
-	    android:layout_width="wrap_content"
-	    android:layout_height="20dp"
-	    android:layout_below="@+id/thresholdSBTitle"
-	    android:layout_toLeftOf="@+id/progressBarG"
-	    android:layout_marginTop="8dp"
-	    android:src="@drawable/soundoff" />
+        <RelativeLayout
+            android:id="@+id/thresholdLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#E6E6E6"
+            android:padding="8dp" >
 
-	<ImageView
-	    android:id="@+id/voiceThreshSoundOn"
-	    android:layout_width="wrap_content"
-	    android:layout_height="20dp"
-	    android:layout_alignRight="@+id/historyButton"
-	    android:layout_below="@+id/thresholdSBTitle"
-		android:layout_marginTop="8dp"
-	    android:src="@drawable/soundon" />
+            <TextView
+                android:id="@+id/thresholdBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Voice Threshold"
+                android:textColor="#828282"
+                android:textSize="14sp" />
 
-	<ListView
-	    android:id="@+id/list12"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/TotalTimetextView"
-	    android:layout_toRightOf="@+id/pauseButton" >
-	</ListView>
+            <ImageView
+                android:id="@+id/voiceThreshSoundOff"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/thresholdBarTitle"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/soundoff" />
 
+            <ImageView
+                android:id="@+id/voiceThreshSoundOn"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/thresholdBarTitle"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/soundon" />
+
+            <SeekBar
+                android:id="@+id/thresholdSeekBar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thresholdBarTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeElapsedLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#E6E6E6"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/progressBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Recording Time"
+                android:textColor="#828282"
+                android:textSize="14sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progressBarTitle"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/maxProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/progressBar1"
+                android:text="10 min"
+                android:textSize="13sp"
+                />
+        </RelativeLayout>
+    </TableLayout>
+ 
 </RelativeLayout>
