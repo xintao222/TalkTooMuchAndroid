@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textSummaryStatistics"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000"
@@ -65,11 +65,11 @@
                     android:textSize="24sp"/>
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textRecorded"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/textView1"
+                    android:layout_below="@+id/textSummaryStatistics"
                     android:textColor="#000"
                     android:text="Recorded" />
 
@@ -77,17 +77,17 @@
                     android:id="@+id/recorded"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textView2"
-                    android:layout_toLeftOf="@+id/textView2"
-                    android:text="TextView"
-                    android:textColor="#000" />
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/textSummaryStatistics"
+                    android:textColor="#000"
+                    android:text="TextView"/>
                 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textSpoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/textView2"
+                    android:layout_below="@+id/textRecorded"
                     android:textColor="#000"
                     android:text="Spoke" />
                 
@@ -95,8 +95,8 @@
                     android:id="@+id/spoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textView3"
-                    android:layout_toLeftOf="@+id/textView3"
+                    android:layout_alignTop="@+id/textSpoke"
+                    android:layout_toLeftOf="@+id/textSpoke"
                     android:textColor="#000"
                     android:text="TextView" />
 
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textPercent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_below="@+id/textView4"
+                    android:layout_below="@+id/textPercent"
                     android:textColor="#000"
                     android:text="TextView"
                     android:textSize="28sp"/>
