@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:example="http://schemas.android.com/apk/res/com.example.soundanalyser">
+    
+<!-- 
+   <com.example.soundanalyser.SeekBarPreference
+        android:key="seekBarPreference"
+	    android:title="@string/dialog_title"
+	    android:dialogTitle="@string/dialog_title"
+	    android:summary="@string/summary"
+	    android:persistent="true"
+	    android:defaultValue="40"
+	    example:minValue="0"
+	    example:maxValue="100" />
+-->	    
+	<EditTextPreference 
+    	android:title="@string/time_dialog_title"
+    	android:dialogTitle="@string/time_dialog_title"
+	    android:key="classTimeLength" 
+	    android:summary="Select total time length" 
+	    android:defaultValue="90"/>
+    
+</PreferenceScreen>

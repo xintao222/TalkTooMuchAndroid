@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Talk Too Much?</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_sound_analyser">Talk Too Much?</string>
+    <string name="settings_app_name">SoundAnalyser Settings</string>
+    <string name="summary">Current threshold is: %1$d</string>
+    <string name="dialog_title">Loudness threshold</string>
+    <string name="time_dialog_title">Total time length</string>
+
+    <color name="white_color">#fff</color>
+    <color name="gray_color">#aaa</color>
+    <color name="darkgray_color">#777</color>
+    <color name="redStart">#ffdd3344</color>
+    <color name="redMid">#ff880A15</color>
+    <color name="redEnd">#ffa11d30</color>
+    <color name="greenStart">#ff33dd44</color>
+    <color name="greenMid">#ff0A8815</color>
+    <color name="greenEnd">#ff1da130</color>
+
+    <string name="title_activity_recording__length">Recording_Length</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_history">History</string>
+
+</resources>
