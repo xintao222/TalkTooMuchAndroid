@@ -40,7 +40,8 @@
                 android:onClick="historyClear"
                 android:text="Clear"
                 android:gravity="center"
-                android:textSize="16dp" />
+                android:textSize="16dp" 
+                android:visibility="invisible"/>
 
         </RelativeLayout>
 
@@ -77,7 +78,7 @@
                     android:id="@+id/recorded"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@+id/textSummaryStatistics"
                     android:textColor="#000"
                     android:text="TextView"/>
@@ -95,8 +96,8 @@
                     android:id="@+id/spoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textSpoke"
-                    android:layout_toLeftOf="@+id/textSpoke"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/recorded"
                     android:textColor="#000"
                     android:text="TextView" />
 
