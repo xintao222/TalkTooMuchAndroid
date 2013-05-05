@@ -32,11 +32,14 @@ public class History extends Activity {
 	TextView recordedTotal;
 	TextView spokeTotal;
 	TextView percentTotal;
+	Button clear;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_history);
+		
+		clear = (Button) findViewById(R.id.clearButton);
 		
 		recordedTotal = (TextView) findViewById(R.id.recorded);
 		spokeTotal = (TextView) findViewById(R.id.spoke);
@@ -54,6 +57,8 @@ public class History extends Activity {
 		
 		if(cursor.getCount()>0)
 		{
+			
+			clear.setVisibility(0); //make visible 
 		
 		String [] columns = new String[] {
 				MySQLiteHelper.KEY_DATE,
@@ -98,8 +103,6 @@ public class History extends Activity {
         @Override
         public void onClick(DialogInterface dialog, int which) {
         	
-        	Button clear = (Button) findViewById(R.id.clearButton);
-    		
     		dbHelper.open();
     		Cursor cursor = dbHelper.fetchAllRecordings();
     		
