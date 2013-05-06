@@ -46,7 +46,7 @@ public class History extends Activity {
 		percentTotal = (TextView) findViewById(R.id.percent);
 		
 		//reset summary
-				percentTotal.setText("0%");
+				percentTotal.setText("0");
 				recordedTotal.setText("0 min, 0 sec");
 				spokeTotal.setText("0 min, 0 sec");
 		
@@ -114,7 +114,7 @@ public class History extends Activity {
     		historyList.setAdapter(dataAdapter);
     		
     		//reset summary
-    		percentTotal.setText("0%");
+    		percentTotal.setText("0");
     		recordedTotal.setText("0 min, 0 sec");
     		spokeTotal.setText("0 min, 0 sec");
     		}
@@ -180,7 +180,7 @@ public class History extends Activity {
 		
 		//record percent
 		
-		percentTotal.setText(percent+"%");
+		percentTotal.setText(" "+percent);
 		dbHelper.close();
 	}
 }
