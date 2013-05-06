@@ -142,22 +142,22 @@ public class History extends Activity {
 		//summary record
 		while(!cursor.isLast())
 		{
-			totalRecorded = totalRecorded+cursor.getLong(5);
+			totalRecorded = totalRecorded+cursor.getLong(4);
 			cursor.moveToNext();
 		}
 		cursor.moveToLast();
-		totalRecorded= totalRecorded+cursor.getLong(5);
+		totalRecorded= totalRecorded+cursor.getLong(4);
 		
 		//summary spoke
 		cursor.moveToFirst();
 		
 		while(!cursor.isLast())
 		{
-			totalSpoke = totalSpoke+cursor.getLong(3);
+			totalSpoke = totalSpoke+cursor.getLong(2);
 			cursor.moveToNext();
 		}
 		cursor.moveToLast();
-		totalSpoke = totalSpoke+cursor.getLong(3);
+		totalSpoke = totalSpoke+cursor.getLong(2);
 		
 		//summary percent
 		double temp_percent = (double) totalSpoke / totalRecorded;
