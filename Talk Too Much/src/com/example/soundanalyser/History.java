@@ -86,6 +86,7 @@ public class History extends Activity {
 		
 		historyList = (ListView) findViewById(R.id.list);
 		historyList.setAdapter(dataAdapter);
+		dbHelper.close();
 		summaryCalc();
 		}
 	}
