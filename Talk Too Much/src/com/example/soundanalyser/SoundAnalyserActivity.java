@@ -104,6 +104,9 @@ public class SoundAnalyserActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_analyser);
 		
+		//splash screen
+		
+		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(this);
