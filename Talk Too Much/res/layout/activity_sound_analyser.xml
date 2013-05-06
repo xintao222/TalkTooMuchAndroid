@@ -22,8 +22,7 @@
 			android:background="#6E6E6E" >
 
             <Button
-                android:id="@+id/historyButton"  
-               
+                android:id="@+id/historyButton"   
                 android:layout_width="96dp"
                 android:layout_height="wrap_content" 
                 android:layout_alignParentRight="true"
@@ -43,12 +42,11 @@
 
             <Button
                 android:id="@+id/startButton"
-                android:background="@drawable/start_button"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_centerHorizontal="true"
                 android:onClick="SetRecordTime"
                 android:gravity="center"
@@ -237,9 +235,9 @@
                 android:layout_height="18dp"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/thresholdBarTitle"
-                android:layout_marginTop="6dp"
                 android:layout_marginLeft="14dp"
-                android:src="@drawable/soundoff" />         
+                android:layout_marginTop="6dp"
+                android:src="@drawable/soundoff" />
 
             <ImageView
                 android:id="@+id/voiceThreshSoundOn"
@@ -253,7 +251,6 @@
 
             <SeekBar
                 android:id="@+id/thresholdSeekBar"
-                
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/thresholdBarTitle"
