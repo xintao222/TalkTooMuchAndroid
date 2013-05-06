@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="6dip" >
+	android:layout_margin="4dp" >
     
 	 <LinearLayout
-	     android:id="@+id/historyTextLayout"
-	     android:layout_width="fill_parent"
-	     android:layout_height="wrap_content"
-	     android:orientation="horizontal"
+		android:id="@+id/historyTextLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="8dp"
 		android:background="#E6E6E6">
 	     
 	     <RelativeLayout
@@ -23,17 +25,23 @@
 		        android:layout_height="wrap_content"
 		        android:layout_alignParentLeft="true"
 		        android:layout_alignParentTop="true"
+		        android:layout_marginBottom="4dp"
 		        android:text="Date: "
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+		        android:textSize="16sp"
+				android:textStyle="bold"
+				android:textColor="#000"/>
+			
 		    <TextView
 		        android:id="@+id/textView2"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_alignLeft="@+id/textView1"
 		        android:layout_below="@+id/textView1"
+		        android:layout_marginBottom="4dp"
 		        android:text="Recorded "
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		        android:textSize="16sp"
+                android:textStyle="bold"
+				android:textColor="#000"/>
 		    
 		    <TextView
 		        android:id="@+id/textView3"
@@ -41,33 +49,41 @@
 		        android:layout_height="wrap_content"
 		        android:layout_alignLeft="@+id/textView2"
 		        android:layout_below="@+id/textView2"
+		        android:layout_marginBottom="4dp"
 		        android:text="Spoke "
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		        android:textSize="16sp"
+                android:textStyle="bold"
+				android:textColor="#000"/>
 		    
 			<TextView
 		         android:id="@+id/date"
 		         android:layout_width="wrap_content"
 		         android:layout_height="wrap_content"
-		         android:layout_above="@+id/textView2"
+		         android:layout_alignBottom="@+id/textView1"
 		         android:layout_toRightOf="@+id/textView1"
-		         android:text="TextView"/>
+		         android:text="TextView"
+				android:textColor="#6E6E6E"/>
+			
 			         
 			
 		    <TextView
 		        android:id="@+id/recorded"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:layout_above="@+id/textView3"
 		        android:layout_toRightOf="@+id/textView2"
-		        android:text="TextView" />
+		        android:layout_alignBottom="@+id/textView2"
+		        android:text="TextView"
+				android:textColor="#6E6E6E"/>
+
 		
 		    <TextView
 		        android:id="@+id/spoke"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:layout_alignBottom="@+id/textView3"
 		        android:layout_toRightOf="@+id/textView3"
-		        android:text="TextView" />
+		        android:layout_alignBottom="@+id/textView3"
+		        android:text="TextView" 
+		        android:textColor="#6E6E6E"/>
 		    
 	         
 	     </RelativeLayout>
@@ -84,7 +100,8 @@
 		        android:layout_alignTop="@+id/textView1"
 		        android:layout_alignParentRight="true"
 		        android:text="Percent "
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
+				android:textStyle="bold"
+				android:textColor="#000"/>
 		
 		     <TextView
 			    android:id="@+id/percent"
@@ -93,7 +110,8 @@
 			    android:layout_below="@+id/textView4"
 			    android:layout_alignRight="@+id/textView4"
 			    android:text="TextView"
-				android:textSize="20sp"/>
+				android:textSize="20sp"
+				android:textColor="#6E6E6E"/>
 	         
 	     </RelativeLayout>
 	</LinearLayout>
