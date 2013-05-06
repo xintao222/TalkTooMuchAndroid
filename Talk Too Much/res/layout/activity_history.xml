@@ -78,8 +78,9 @@
                     android:id="@+id/recorded"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textSummaryStatistics"
+                    android:layout_alignTop="@+id/textRecorded"
 					android:layout_toRightOf="@+id/textRecorded"
+					android:layout_marginLeft="8dp"
                     android:textColor="#000"
                     android:text="TextView"/>
                 
@@ -96,8 +97,9 @@
                     android:id="@+id/spoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/textSpoke"
                     android:layout_toRightOf="@+id/textSpoke"
-                    android:layout_below="@+id/recorded"
+                    android:layout_marginLeft="8dp"
                     android:textColor="#000"
                     android:text="TextView" />
 
@@ -129,17 +131,18 @@
 
             </RelativeLayout>
         </LinearLayout>
+		
+		<ListView
+	        android:id="@+id/list"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="150dp"
+	        android:background="#FFFFFF">
+	    </ListView>
 
 
     </TableLayout>
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="150dp"
-        android:background="#FFFFFF">
-    </ListView>
+
 
 </RelativeLayout>
