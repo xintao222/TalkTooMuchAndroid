@@ -127,7 +127,9 @@ containing a value of this type.
         public static final int activity_recording__length=0x7f030001;
         public static final int activity_sound_analyser=0x7f030002;
         public static final int dialog_slider=0x7f030003;
-        public static final int recording_info=0x7f030004;
+        public static final int green_button=0x7f030004;
+        public static final int recording_info=0x7f030005;
+        public static final int seekbarblue=0x7f030006;
     }
     public static final class menu {
         public static final int activity_sound_analyser=0x7f090000;
@@ -149,7 +151,6 @@ containing a value of this type.
     }
     public static final class style {
         public static final int AppTheme=0x7f080000;
-        public static final int Theme_Splash=0x7f080001;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

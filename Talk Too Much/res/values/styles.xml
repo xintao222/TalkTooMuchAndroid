@@ -2,8 +2,4 @@
 
 	<style name="AppTheme" parent="android:Theme.Light" />
 
-	<style name="Theme.Splash" parent="android:Theme">
-		<item name="android:windowBackground">@drawable/splash.png</item>
-		<item name="android:windowNoTitle">true</item>
-	</style>
 </resources>
