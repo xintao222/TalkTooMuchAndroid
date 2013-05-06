@@ -78,8 +78,8 @@
                     android:id="@+id/recorded"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
                     android:layout_below="@+id/textSummaryStatistics"
+					android:layout_toRightOf="@+id/textRecorded"
                     android:textColor="#000"
                     android:text="TextView"/>
                 
@@ -96,7 +96,6 @@
                     android:id="@+id/spoke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
                     android:layout_toRightOf="@+id/textSpoke"
                     android:layout_below="@+id/recorded"
                     android:textColor="#000"
