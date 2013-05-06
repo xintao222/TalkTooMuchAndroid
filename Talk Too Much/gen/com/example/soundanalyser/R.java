@@ -63,7 +63,10 @@ containing a value of this type.
         public static final int red_progress=0x7f020005;
         public static final int soundoff=0x7f020006;
         public static final int soundon=0x7f020007;
-        public static final int ttmlogo=0x7f020008;
+        public static final int splash=0x7f020008;
+        public static final int ttmlogo=0x7f020009;
+        public static final int ttmlogo2=0x7f02000a;
+        public static final int ttmlogostore=0x7f02000b;
     }
     public static final class id {
         public static final int TalkPercenttextView=0x7f0a0016;
@@ -146,6 +149,7 @@ containing a value of this type.
     }
     public static final class style {
         public static final int AppTheme=0x7f080000;
+        public static final int Theme_Splash=0x7f080001;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

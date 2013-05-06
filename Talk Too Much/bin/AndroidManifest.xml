@@ -13,8 +13,8 @@
 
     <application
         android:theme="@android:style/Theme.NoTitleBar"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:icon="@drawable/ttmlogo2"
+        android:label="@string/app_name" android:logo="@drawable/ttmlogostore">
         <activity
             android:name="com.example.soundanalyser.SoundAnalyserActivity"
             android:label="@string/title_activity_sound_analyser"
