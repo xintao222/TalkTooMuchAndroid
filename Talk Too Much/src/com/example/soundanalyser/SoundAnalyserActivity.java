@@ -35,6 +35,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -96,14 +97,13 @@ public class SoundAnalyserActivity extends Activity {
 	private Button endBtn;
 	private Button pauseResumeBtn;
 
-
 	private static final String TAG = "SoundAnalyser";
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_analyser);
-		
 		//splash screen
 		
 		
@@ -177,7 +177,6 @@ public class SoundAnalyserActivity extends Activity {
 		endBtn = (Button) findViewById(R.id.endButton);
 		pauseResumeBtn = (Button) findViewById(R.id.pauseButton);
 		
-
 		isRecordingStopped = false;
 		isRecordingPaused = false;
 		
@@ -445,7 +444,7 @@ public class SoundAnalyserActivity extends Activity {
 	}
 	//go to history page if requested by user
 	public void HistoryExecute(View v){
-
+		
 		Intent i = new Intent(SoundAnalyserActivity.this, History.class);
         startActivity(i);
 		

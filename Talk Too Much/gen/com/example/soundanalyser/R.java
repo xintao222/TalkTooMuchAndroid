@@ -55,18 +55,23 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int green_progress=0x7f020000;
-        public static final int ic_action_search=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int ic_soundoff=0x7f020003;
-        public static final int ic_soundon=0x7f020004;
-        public static final int red_progress=0x7f020005;
-        public static final int soundoff=0x7f020006;
-        public static final int soundon=0x7f020007;
-        public static final int splash=0x7f020008;
-        public static final int ttmlogo=0x7f020009;
-        public static final int ttmlogo2=0x7f02000a;
-        public static final int ttmlogostore=0x7f02000b;
+        public static final int background_fill=0x7f020000;
+        public static final int button_selector=0x7f020001;
+        public static final int green_progress=0x7f020002;
+        public static final int ic_action_search=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int ic_soundoff=0x7f020005;
+        public static final int ic_soundon=0x7f020006;
+        public static final int progress=0x7f020007;
+        public static final int progress_fill=0x7f020008;
+        public static final int red_progress=0x7f020009;
+        public static final int soundoff=0x7f02000a;
+        public static final int soundon=0x7f02000b;
+        public static final int splash=0x7f02000c;
+        public static final int start_button=0x7f02000d;
+        public static final int ttmlogo=0x7f02000e;
+        public static final int ttmlogo2=0x7f02000f;
+        public static final int ttmlogostore=0x7f020010;
     }
     public static final class id {
         public static final int TalkPercenttextView=0x7f0a0016;
@@ -129,7 +134,6 @@ containing a value of this type.
         public static final int dialog_slider=0x7f030003;
         public static final int green_button=0x7f030004;
         public static final int recording_info=0x7f030005;
-        public static final int seekbarblue=0x7f030006;
     }
     public static final class menu {
         public static final int activity_sound_analyser=0x7f090000;
