@@ -195,9 +195,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/thresholdSBTitle"
                 android:layout_centerHorizontal="true"
+				android:layout_marginTop="8dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginRight="40dp" />
 
             <ProgressBar
                 android:id="@+id/progressBarR"
