@@ -64,7 +64,8 @@
                     android:layout_height="wrap_content"
                     android:text="Summary Statistics"
                     android:textColor="#000"
-                    android:textSize="24sp" />
+					android:textStyle="bold"
+                    android:textSize="28sp" />
 
                 <TextView
                     android:id="@+id/textRecorded"
@@ -116,6 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="Percent"
+                    android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="28sp" />
 
