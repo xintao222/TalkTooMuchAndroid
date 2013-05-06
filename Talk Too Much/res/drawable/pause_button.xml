@@ -5,18 +5,19 @@
     <item android:state_pressed="true" >
         <shape>
             <gradient
-                android:startColor="#009900"
-                android:endColor="#009900"
-                android:angle="270" />
+                android:startColor="#606060"
+                android:endColor="#606060"
+                android:angle="180" />
             
+         
         </shape>
     </item>
 
     <item android:state_focused="true" >
         <shape>
             <gradient
-                android:endColor="#009900"
-                android:startColor="#009900"
+                android:endColor="#606060"
+                android:startColor="#606060"
                 android:angle="270" />
             
         </shape>
@@ -25,11 +26,10 @@
     <item>        
         <shape>
             <gradient
-                android:endColor="#66CC33"
-                android:startColor="#99FF33"
+                android:endColor="#989898"
+                android:startColor="#989898"
                 android:angle="270" />
             
-          
         </shape>
     </item>
 </selector>
